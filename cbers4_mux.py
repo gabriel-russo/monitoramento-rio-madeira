@@ -3,15 +3,14 @@ from cbers4asat.tools import rgbn_composite
 from datetime import date, timedelta
 from osgeo_utils import gdal2tiles
 from osgeo.gdal import BuildVRT
-from os import makedirs, remove, cpu_count
+from os import makedirs, cpu_count
 from shutil import rmtree
 from os.path import exists
 from glob import glob
 
 # Diretórios - preencher
-
 BASE_OUTPUT_DIR = "monitoramento"
-BASE_OUTPUT_TEMP = f"/tmp/monitoramento-{date.today()}"
+BASE_OUTPUT_TEMP = f"/tmp/monitoramento-cb4-mux-{date.today()}"
 
 OUTPUT_XYZ_TILES = "xyz"
 
@@ -23,7 +22,7 @@ api = Cbers4aAPI("teste@teste.com")
 path_rows = [(176, 109), (176, 110)]
 
 hoje = date.today()
-semana_passada = hoje - timedelta(weeks=2)
+semana_passada = hoje - timedelta(weeks=1)
 
 if not exists(BASE_OUTPUT_DIR):
     makedirs(BASE_OUTPUT_DIR)
