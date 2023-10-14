@@ -9,15 +9,14 @@ from shutil import rmtree
 from os.path import exists, basename
 from glob import glob
 
-# Diretórios - preencher
+# Preencher
 BASE_OUTPUT_DIR = "monitoramento"
-BASE_OUTPUT_TEMP = f"/tmp/monitoramento-cb4-wfi-{date.today()}"
+BASE_OUTPUT_TEMP = f"/tmp/monitoramento-amazonia1-wfi-{date.today()}"
 
 OUTPUT_XYZ_TILES = "xyz"
 
-# ==================
-
 api = Cbers4aAPI("teste@teste")
+# ==================
 
 # Área de interesse. Pode ser: bouding box, path row ou polygon.
 path_rows = [(38, 16), (38, 17)]
