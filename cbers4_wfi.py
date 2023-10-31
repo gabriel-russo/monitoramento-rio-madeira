@@ -9,15 +9,14 @@ from shutil import rmtree
 from os.path import exists
 from glob import glob
 
-# Diretórios - preencher
+# Preencher
 BASE_OUTPUT_DIR = "monitoramento"
 BASE_OUTPUT_TEMP = f"/tmp/monitoramento-cb4-wfi-{date.today()}"
 
 OUTPUT_XYZ_TILES = "xyz"
 
-# ==================
-
 api = Cbers4aAPI("teste@teste.com")
+# ==================
 
 # Área de interesse. Pode ser: bouding box, path row ou polygon.
 path_rows = [(176, 111)]
@@ -112,7 +111,7 @@ if len(glob(f"{BASE_OUTPUT_TEMP}/coloridas/*.tif")):
             "-p",
             "mercator",
             "-z",
-            "7-9",
+            "7-15",
             "-w",
             "none",
             "-r",
